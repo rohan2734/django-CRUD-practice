@@ -1,0 +1,51 @@
+>py -m venv venv
+>.\venv\Scripts\activate
+>pip install django
+
+>pip install djongo
+
+>django-admin startproject demoproject
+
+* change the settings.py
+
+DATABASES = {
+    'default':{
+        'ENGINE':'djongo',
+        'NAME':'djangoDemo',
+        #'CLIENT':{
+        #    'host':'your-db-host'
+        #}
+        
+
+    }
+}
+>cd demoproject
+>pip install dnspython
+>pip install pymongo[srv]
+>python manage.py makemigrations
+>python manage.py migrate
+
+for CRUD
+>python manage.py startapp demoapp
+>go to settings.py
+add 'demoapp', in the  'INSTALLED_APPS'
+
+>now go to models.py and create a models
+
+* and go to admin.py
+>from .models import *
+*add this line >admin.site.register(Model_name)
+
+* to create super user
+>python manage.py createsuperuser
+give username:admin
+leave email id
+password:pass123
+
+>python manage.py makemigrations
+>python manage.py migrate
+>python manage.py runserver
+
+* go to /admin
+>username:admin
+>password:pass123
